@@ -1,6 +1,6 @@
 # Meta gbk generator
 
-This script was done to work in junction with outputs coming from : *MEGAHit, Prodigal and EggnogMapper, as : Assembly, Gene Prediction And Gene Annotation pipeline
+This script was done to work in junction with outputs coming from : MEGAHit, Prodigal and EggnogMapper, as : Assembly, Gene Prediction And Gene Annotation pipeline
 If you have any other input/output file, you are encouraged to convert them in a suitable format.
 
 
@@ -48,6 +48,22 @@ The script requires 3 main inputs.
  ```
 MAG_01_k141_3199166_gene4   1535422.ND16A_1633      3.4e-150        437.0   COG0153@1|root,COG0153@2|Bacteria,1MVQD@1224|Proteobacteria,1RQ0C@1236|Gammaproteobacteria,2Q5XE@267889|Colwelliaceae   1236|Gammaproteobacteria        G       Galactokinase galactose-binding signature       galK    -       2.7.1.6 ko:K00849       ko00052,ko00520,ko01100,map00052,map00520,map01100       M00554,M00632   R01092  RC00002,RC00078 ko00000,ko00001,ko00002,ko01000,ko04147 -       -       -       GHMP_kinases_C,GHMP_kinases_N,GalKase_gal_bdg
  ```
+
+## Example Scripts
+
+* Once you have cloned/downloaded the repository, you can run 2 example scripts. You can also use them as a guide for your own run.
+
+* For MAGs / BINs use:
+```
+bash bash_example_MAG.sh
+```
+
+* Entire Metagenomes:
+```
+bash_example_Metagenome.sh
+```
+
+
 
 ## Usage
 
