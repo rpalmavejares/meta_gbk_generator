@@ -17,7 +17,6 @@ start_time = time.time()
 parser = ArgumentParser(prog='Meta GBK generator',
                     description='Creates a GBK file from an assembly file, a cds file and an annotation file')
 
-#group = parser.add_mutually_exclusive_group()
 
 parser.usage = 'Use this program as follow:\n\npython meta_gbk_generator.py --asembly ASSEMBLY.fasta --faa ASSEMBLY_PROT_GENES.faa --annot ANNOTATION.tsv --source "SOURCE" --organism "ORGANISM" --taxonomy "TAXONOMY" --isolate "ISOLATE" --isolation_source "ISOLATION SOURCE" --taxon_id "TAXON ID" --country "COUNTRY" --type "TYPE" --gbk "GBK_OUTPUT"'
 
@@ -75,7 +74,6 @@ for record_fna in SeqIO.parse(fasta_genes,"fasta"):
     fna_stop  = aux_fna_features[4]
     fna_strand= aux_fna_features[6]
 
-    #fna_data.append(name_parent)        # 1 FASTA SEQ ID
     fna_data.append(fna_identifier)     # 2 FASTA CDN SEQ ID
     fna_data.append(fna_start)          # 3 START
     fna_data.append(fna_stop)           # 4 STOP
@@ -94,7 +92,7 @@ print ("FNA file CDS", len(fna_gene_data_dict))
 print("---Time for create gene cds dict--- %s seconds ---" % (time.time() - start_time))
 
     
-# EMAPPER V 2.x.x
+# EMAPPER V 2.x.x FIELDS 
 
 # 0 query   
 # 1 seed_ortholog   
@@ -146,10 +144,7 @@ for lines in all_anotation_features:
 print ("ALL data from anotation", len(all_data_anotation_cluster_dict))
 print("---Time for creating annotation dict--- %s seconds ---" % (time.time() - start_time))
 
-#for key, values in all_data_anotation_cluster_dict.items():
-#    print(key, values)
-#    break
-#print all_data_anotation_cluster[0]
+
 
 
 aux_array_cluster = []
@@ -157,26 +152,9 @@ aux_array_cluster = []
 cds_position_by_parent=dict()
 
 
-#all_data_anotation_cluster_dict
-#fna_gene_data_dict
-
-# entries : 
-# [0] = gene_name 
-# [1] = start 
-# [2] = stop 
-# [3] = strand 
-# [4] = sequence 
-# [5] = gene-name 
-# [6] = description 
-# [7] = EC
-# [8] = GO
-
-
 for key, values in fna_gene_data_dict.items():
 
-    #print("From fna file = ", fna_gene_data_dict[key])
     if(key in all_data_anotation_cluster_dict.keys()):
-        #print("From anot file = ", all_data_anotation_cluster_dict[key])
         if(len(fna_gene_data_dict[key])>=0):
             for entries in fna_gene_data_dict[key]:
                 empty_annot = ["-","-","-","-"]
@@ -191,8 +169,7 @@ for key, values in fna_gene_data_dict.items():
                         sub_entries[7] = anot[3]
                         sub_entries[8] = anot[4]
                         fna_gene_data_dict[key][gene_index]=sub_entries
-                        #print(key ," >>> ",fna_gene_data_dict[key])
-                        #break
+
     else:
         for entries in fna_gene_data_dict[key]:
             empty_annot = ["-","-","-","-"]
@@ -213,8 +190,7 @@ output_file = open (gbk_output_name+".gbk",'w')
 
 
 for record in SeqIO.parse(fasta_assembly,"fasta"):
-    #print dir(record)
-    #print record.seq
+
     
     aux_for_each = []
     aux_identifier = 'unknown'
@@ -223,16 +199,14 @@ for record in SeqIO.parse(fasta_assembly,"fasta"):
     genome_data.append(aux_for_each)
     
     sequence_string = str(record.seq)
-    
-    #print (sequence_string)
-    
+   
     taxonomy_tree=args.taxonomy
     taxonomy_tree=taxonomy_tree.split(":")
     
     aux_seq_all = Seq(sequence_string)
 
     name_record = (record.id).split("_")
-    #print(name_record)
+
     all_annotations=dict()  
     all_annotations["molecule_type"]="DNA"
     all_annotations["source"]=genome_source.replace("_"," ")
@@ -249,8 +223,7 @@ for record in SeqIO.parse(fasta_assembly,"fasta"):
                 id=new_custom_name,
                 name=new_custom_name,
                 annotations=all_annotations)
-    #print(dir(record_gbk.annotations))
-    #record_gbk.seq.alphabet = generic_dna
+   
     qualifier_source = dict()
     qualifier_source['organism']=args.organism.replace("_"," ") 
     qualifier_source['db_xref']="taxon:"+taxon_id
@@ -260,16 +233,14 @@ for record in SeqIO.parse(fasta_assembly,"fasta"):
     qualifier_source['country']=country 
     feature_source = SeqFeature(FeatureLocation(start=int(0),end=int(len(record_gbk.seq)-1), strand=int(1)), type="source", qualifiers=qualifier_source)
     record_gbk.features.append(feature_source)
-    #print(" record ", record.id)
     
     if(record.id in fna_gene_data_dict.keys()):    
 
         for each_fna in fna_gene_data_dict[record.id]:
-            #print(" &&& ", each_fna)
-            #print (str(each_fna[0])+"  "+str(record.id))       
+      
             qualifier_dict = dict()
             name_gbk_locus = (record.id).split("_")
-            #print("here",each_fna[1])
+          
             new_custom_locus = str(record.id)
             qualifier_dict['locus_tag'] = each_fna[0]
 
@@ -277,7 +248,7 @@ for record in SeqIO.parse(fasta_assembly,"fasta"):
 
                 qualifier_dict['gene'] = str(each_fna[5]).upper()
 
-            if (each_fna[8]!="" and each_fna[8]!="-"): # GO: TERMS aux_array[8]
+            if (each_fna[8]!="" and each_fna[8]!="-"): 
                 
                 if(gbk_type=="m2m"):
                     qualifier_dict['go_component']=[]
@@ -296,15 +267,15 @@ for record in SeqIO.parse(fasta_assembly,"fasta"):
                         qualifier_dict['db_xref'] = each_fna[8]
 
 
-            if (each_fna[5]!="" and each_fna[5]!="-"): # Gene_Name Again : aux_array[]
+            if (each_fna[5]!="" and each_fna[5]!="-"):
                 
                 qualifier_dict['product'] = each_fna[5].capitalize()
 
-            if (each_fna[6]!="" and each_fna[6]!="-"): # Description Annot : aux_array[]
+            if (each_fna[6]!="" and each_fna[6]!="-"):
                 
                 qualifier_dict['function'] = each_fna[6]
             
-            if (each_fna[7]!="" and each_fna[7]!="-"): # EC Number : aux_array[]
+            if (each_fna[7]!="" and each_fna[7]!="-"): 
                 if("," in each_fna[7]): 
                     all_ec_terms=each_fna[7].split(",") 
                     qualifier_dict['EC_number']=list(all_ec_terms)
