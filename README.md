@@ -10,6 +10,7 @@ If you have any other input/output file, you are encouraged to convert them in a
 
 This program uses the following python libraries:
 
+* Python 3.7 or superior
 * Biopython
 
 ## Input Files:
