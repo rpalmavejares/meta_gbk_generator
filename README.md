@@ -61,7 +61,7 @@ bash bash_example_MAG.sh
 
 * For entire Metagenomes:
 ```
-bash_example_Metagenome.sh
+bash bash_example_Metagenome.sh
 ```
 
 
