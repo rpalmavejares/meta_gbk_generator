@@ -16,7 +16,7 @@ This program uses the following python libraries:
 ## Input Files:
 
 The script requires 3 main inputs. 
-1) An Fasta formated Assembly file with contigs from a Metagenome or MAG. This script has been specifically made for MEGAHit contigs names, although you can use the following format :
+1) A Fasta formated Assembly file with contigs from a Metagenome or MAG. This script has been specifically made for MEGAHit contigs names, although you can use the following format :
   * [Sample_name]\_[extra-description]\_[contig-id]
  
  #### Example:
