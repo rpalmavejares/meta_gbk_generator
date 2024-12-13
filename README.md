@@ -66,7 +66,7 @@ options:
   --taxonomy TAXONOMY   Organism taxonomy. For Metagenomes use "Bacteria", for Genomes use the Format: "Phylum:Class:Order:Family:Genus:Species"
   --isolate ISOLATE     MAG / Assembly isolate
   --isolation_source ISOLATION_SOURCE
-                        Isolation Source: Might be soil, desert_soil, marine, etc.
+                        Description of your sample extraction site: Might be soil, desert_soil, marine, environmental etc.
   --taxon_id TAXON_ID   Taxon ID of the Organism / Isolate
   --country COUNTRY     Country of Origin
   --type {m2m,ncbi}     Create a GBK for usage in NCBI or Metage2Metabo. Default [ncbi]
@@ -84,6 +84,8 @@ If you are having trouble filling all the field of the script, here are some rou
 * --taxonomy : This field should contain the whole naming tree of your "--organism". For metagenomes use only "Bacteria", "Archaea", for isolates, use the maximum clasification "Bacteria;Pseudomonadati;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia"
 
 * --taxon_id : This field contains the ID of your "--organism". It can be as simple as "2" for Bacteria, or "1255577" for our "Eschericia coli 1E14". All these IDs can be found on the [NCBI Taxonomy Browser](https://www.ncbi.nlm.nih.gov/taxonomy)
+
+* --isolate : This field should contain and ID representative to you or your team. Usually we use names such as "Metagenome_01", "BIN-XX-water", etc. You can also use your [Sample_name] from point 1) 
 
 ## Authors
 
