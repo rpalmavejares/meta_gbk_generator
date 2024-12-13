@@ -58,7 +58,7 @@ MAG_01_k141_3199166_gene4   1535422.ND16A_1633      3.4e-150        437.0   COG0
 bash bash_example_MAG.sh
 ```
 
-* Entire Metagenomes:
+* For entire Metagenomes:
 ```
 bash_example_Metagenome.sh
 ```
@@ -93,15 +93,15 @@ options:
 
 If you are having trouble filling all the field of the script, here are some roundabout you can take.
 
-* --source : This field should contain the Taxonomic Clasification of your Genomic Data plus an extra description if you wish, ranging froma simple "Soild Bacteria" or "Metagenomic Bacteria" to Specie level descriptor, such as "Isolated E. Coli 1E14"
+* --source : This field should contain the Taxonomic Clasification of your Genomic Data plus an extra description if you wish, ranging from a simple "Soil Bacteria" or "Metagenomic Bacteria" to Specie level descriptors, such as "Isolated E. Coli 1E14"
 
-* --organism : This field should contain only Taxonomic Clasification accepted by NCBI/Taxonomy or tools such as GTDB, MetaPhlan, etc. Using the same example we can use either, "Bacteria", "Archaea" or specific taxas such as "Eschericia coli 1E14"
+* --organism : This field should contain only Taxonomic Clasifications accepted by NCBI/Taxonomy or tools such as GTDB, MetaPhlan, etc. Using the same example we can use either, "Bacteria", "Archaea" or specific taxas such as "Eschericia coli 1E14"
   
-* --taxonomy : This field should contain the whole naming tree of your "--organism". For metagenomes use only "Bacteria", "Archaea", for isolates, use the maximum clasification "Bacteria;Pseudomonadati;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia"
+* --taxonomy : This field should contain the whole naming tree of your "--organism". For metagenomes use only "Bacteria", "Archaea", for isolates, use the maximum clasification available: "Bacteria;Pseudomonadati;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia"
 
-* --taxon_id : This field contains the ID of your "--organism". It can be as simple as "2" for Bacteria, or "1255577" for our "Eschericia coli 1E14". All these IDs can be found on the [NCBI Taxonomy Browser](https://www.ncbi.nlm.nih.gov/taxonomy)
+* --taxon_id : This field contains the TAXONOMIC ID of your "--organism". It can be as simple as "2" for Bacteria, or "1255577" for our "Eschericia coli 1E14". All these IDs can be found on the [NCBI Taxonomy Browser](https://www.ncbi.nlm.nih.gov/taxonomy)
 
-* --isolate : This field should contain and ID representative to you or your team. Usually we use names such as "Metagenome_01", "BIN-XX-water", etc. You can also use your [Sample_name] from point 1) 
+* --isolate : This field should contain and ID representative to you or your team. Usually names such as "Metagenome_01", "BIN-XX-water", are preferred. You can also use your [Sample_name] from point 1). 
 
 ## Authors
 
