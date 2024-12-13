@@ -83,7 +83,7 @@ If you are having trouble filling all the field of the script, here are some rou
   
 * --taxonomy : This field should contain the whole naming tree of your "--organism". For metagenomes use only "Bacteria", "Archaea", for isolates, use the maximum clasification "Bacteria;Pseudomonadati;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia"
 
-* --taxon_id : This field contains the ID of your "--organism". It can be as simple as "2" for Bacteria, or "1255577" for our "Eschericia coli 1E14". All these IDs can be found on the NCBI Taxonomy Browser ex.[NCBI-Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy)
+* --taxon_id : This field contains the ID of your "--organism". It can be as simple as "2" for Bacteria, or "1255577" for our "Eschericia coli 1E14". All these IDs can be found on the [NCBI Taxonomy Browser](https://www.ncbi.nlm.nih.gov/taxonomy)
 
 ## Authors
 
