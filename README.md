@@ -108,10 +108,8 @@ bash bash_example_Metagenome.sh
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Ricardo Palma  
-ex. rpalmavejares@gmail.com
+Ricardo Palma Vejares
+rpalmavejares@gmail.com
 
 ## License
 
