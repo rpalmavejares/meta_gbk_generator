@@ -34,7 +34,7 @@ The script requires 3 main inputs.
  ...
  ```
 3) A Tab-sepparated formated File with all the CDS|ORF annotations and or descriptions. This script has been specifically made for EggNogMapper v 2.x.x fields, although you can use the following format:
-  * #query  seed_ortholog   evalue  score   eggNOG_OGs      max_annot_lvl   COG_category    Description     Preferred_name  GOs     EC      KEGG_ko KEGG_Pathway    KEGG_Module     KEGG_Reaction   KEGG_rclass     BRITE   KEGG_TC CAZy    BiGG_Reaction   PFAMs
+  * #query\tseed_ortholog   evalue  score   eggNOG_OGs      max_annot_lvl   COG_category    Description     Preferred_name  GOs     EC      KEGG_ko KEGG_Pathway    KEGG_Module     KEGG_Reaction   KEGG_rclass     BRITE   KEGG_TC CAZy    BiGG_Reaction   PFAMs
   * #query Must be the same format as point 2).
 
 
