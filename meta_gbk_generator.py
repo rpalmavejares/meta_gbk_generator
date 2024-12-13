@@ -28,7 +28,7 @@ parser.add_argument('--source',help='Genome Source (For Metagenomes use : Metage
 parser.add_argument('--organism',help='Organism, could be the same as Source',required=True)
 parser.add_argument('--taxonomy',help='Organism taxonomy. For Metagenomes use "Bacteria", for Genomes use the Format:\n"Phylum:Class:Order:Family:Genus:Species" ',required=True)
 parser.add_argument('--isolate',help='MAG / Assembly isolate',required=True)
-parser.add_argument('--isolation_source',help='Isolation Source: Might be soil, desert_soil, marine, etc.',required=True)
+parser.add_argument('--isolation_source',help='Description of your sample extraction site: Might be soil, desert_soil, marine, environmental etc.',required=True)
 parser.add_argument('--taxon_id',help='Taxon ID of the Organism / Isolate',required=True)
 parser.add_argument('--country',help='Country of Origin',required=True)
 parser.add_argument("--type",help='Create a GBK for usage in NCBI or Metage2Metabo. Default [ncbi]',choices=['m2m','ncbi'],required=True,default='ncbi')
