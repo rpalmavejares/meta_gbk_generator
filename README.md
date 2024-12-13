@@ -1,4 +1,4 @@
-# Meta_gbk_generator
+# Meta gbk generator
 
 This script was done to work in junction with outputs coming from : *MEGAHit, Prodigal and EggnogMapper, as : Assembly, Gene Prediction And Gene Annotation pipeline
 If you have any other input/output file, you are encouraged to convert them in a suitable format.
